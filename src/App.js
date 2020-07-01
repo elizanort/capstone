@@ -1,15 +1,20 @@
 import React from 'react';
-import Route, Switch, Link from 'react-router-dom';
+import HomeScreen from './Components/Home/HomeScreen';
 
 
 
 
-class App extends Component {
+class App extends React.Component {
+  state={
+    userInformation:{
+      firstName: '',
+    }
+  }
   render() {
     return (
-      <div>
-        
-      </div>
+     
+        <HomeScreen userInformation={this.state.userInformation} />
+    
     )
   }
 }

@@ -12,6 +12,11 @@ class HomeScreen extends React.Component {
       padding: 1rem;
     `;
 
+    const FlexCenterWrap = styled.div`
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    `
     const FilterButton = styled.button`
       border: 1px solid black;
       color: black;
@@ -31,12 +36,11 @@ class HomeScreen extends React.Component {
           <Greeting>Hello, Garrett</Greeting>
         </div>
         <div>
-          <span>
+          <FlexCenterWrap>
             <FilterButton>Energize</FilterButton>
             <FilterButton>Refocus</FilterButton>
             <FilterButton>Relax</FilterButton>
-            <FilterButton>Destress</FilterButton>
-          </span>
+          </FlexCenterWrap>
         </div>
       </div>
     );

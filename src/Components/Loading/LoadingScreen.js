@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import loadingicon from './img/loadingicon.png';
 
 export default class LoadingScreen extends Component {
     
@@ -6,7 +7,7 @@ export default class LoadingScreen extends Component {
     render() {
         return (
             <div>
-                <img src='./img/loadingicon.png'>
+                {loadingicon}
             </div>
         )
     }

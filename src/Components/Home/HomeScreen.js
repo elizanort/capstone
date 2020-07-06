@@ -13,10 +13,10 @@ class HomeScreen extends React.Component {
     `;
 
     const FlexCenterWrap = styled.div`
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    `
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    `;
     const FilterButton = styled.button`
       border: 1px solid black;
       color: black;
@@ -26,22 +26,47 @@ class HomeScreen extends React.Component {
       border-radius: 40px;
     `;
 
+    const CardWrap = styled.div`
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: scroll;
+      margin: 1.5rem;
+    `;
+
+    const Card = styled.div`
+      height: 19rem;
+      width: 19rem;
+      border: 1px solid black;
+      border-radius: 3rem;
+      margin: 1rem;
+    `;
+
     return (
       <div className="home_wrapper">
         <NavWrap>
-          <i class="fas fa-bars"></i>
+          <button className="button">
+            <i class="fas fa-bars"></i>
+          </button>
         </NavWrap>
 
         <div>
           <Greeting>Hello, Garrett</Greeting>
         </div>
-        <div>
-          <FlexCenterWrap>
-            <FilterButton>Energize</FilterButton>
-            <FilterButton>Refocus</FilterButton>
-            <FilterButton>Relax</FilterButton>
-          </FlexCenterWrap>
-        </div>
+
+        <FlexCenterWrap>
+          <FilterButton>Energize</FilterButton>
+          <FilterButton>Refocus</FilterButton>
+          <FilterButton>Relax</FilterButton>
+        </FlexCenterWrap>
+
+        <CardWrap>
+            <Card></Card>
+            <Card></Card>
+            <Card></Card>
+        </CardWrap>
+        <div></div>
       </div>
     );
   }

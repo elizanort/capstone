@@ -4,7 +4,7 @@ import styled from "styled-components";
 class HomeScreen extends React.Component {
   render() {
     const NavWrap = styled.div`
-      padding: 2rem;
+      padding: 1rem;
       display: flex;
     `;
     const Greeting = styled.p`
@@ -18,11 +18,11 @@ class HomeScreen extends React.Component {
       align-items: center;
     `;
     const FilterButton = styled.button`
-      border: 1px solid black;
+      border: 1px solid #006D77;
       color: black;
       margin: 0.5rem 1rem;
-      padding: 0.5rem 1rem;
-      background: transparent;
+      padding: 0.45rem 1rem;
+      background: #EDF6F9;
       border-radius: 40px;
     `;
 
@@ -38,7 +38,7 @@ class HomeScreen extends React.Component {
     const Card = styled.div`
       height: 19rem;
       width: 19rem;
-      border: 1px solid black;
+      border: 1px solid #006D77;
       border-radius: 3rem;
       margin: 1rem;
     `;

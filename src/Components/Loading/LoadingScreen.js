@@ -1,14 +1,25 @@
 import React, { Component } from 'react';
-import loadingicon from './img/loadingicon.png';
+import loadingIcon from './loadingicon.png';
+
 
 export default class LoadingScreen extends Component {
     
     
     render() {
         return (
-            <div>
-                {loadingicon}
+            <>
+            <div className="loading-icon">
+                <img src={loadingIcon} alt="mindBite" />
             </div>
+            <div className="splash-text">
+                <h1>
+                    MINDBITE
+                </h1>
+                <h3>
+                    Relieve. Refocus. Repeat.
+                </h3>
+            </div>
+            </>
         )
     }
 }

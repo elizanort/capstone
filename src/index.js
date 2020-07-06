@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './Styles/index.css';
-// import App from './App';
+import App from './App';
 import LoadingScreen from './Components/Loading/LoadingScreen.js'
+import './Styles/styles.scss';
+
+
 import * as serviceWorker from './serviceWorker';
 import './Font/Raleway-Regular.ttf';
 

@@ -4,7 +4,7 @@ import styled from "styled-components";
 class HomeScreen extends React.Component {
   render() {
     const NavWrap = styled.div`
-      padding: 2rem;
+      padding: 1rem;
       display: flex;
     `;
     const Greeting = styled.p`
@@ -13,35 +13,60 @@ class HomeScreen extends React.Component {
     `;
 
     const FlexCenterWrap = styled.div`
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    `
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    `;
     const FilterButton = styled.button`
-      border: 1px solid black;
+      border: 1px solid #006D77;
       color: black;
       margin: 0.5rem 1rem;
-      padding: 0.5rem 1rem;
-      background: transparent;
+      padding: 0.45rem 1rem;
+      background: #EDF6F9;
       border-radius: 40px;
+    `;
+
+    const CardWrap = styled.div`
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: scroll;
+      margin: 1.5rem;
+    `;
+
+    const Card = styled.div`
+      height: 19rem;
+      width: 19rem;
+      border: 1px solid #006D77;
+      border-radius: 3rem;
+      margin: 1rem;
     `;
 
     return (
       <div className="home_wrapper">
         <NavWrap>
-          <i class="fas fa-bars"></i>
+          <button className="button">
+            <i class="fas fa-bars"></i>
+          </button>
         </NavWrap>
 
         <div>
           <Greeting>Hello, Garrett</Greeting>
         </div>
-        <div>
-          <FlexCenterWrap>
-            <FilterButton>Energize</FilterButton>
-            <FilterButton>Refocus</FilterButton>
-            <FilterButton>Relax</FilterButton>
-          </FlexCenterWrap>
-        </div>
+
+        <FlexCenterWrap>
+          <FilterButton>Energize</FilterButton>
+          <FilterButton>Refocus</FilterButton>
+          <FilterButton>Relax</FilterButton>
+        </FlexCenterWrap>
+
+        <CardWrap>
+            <Card></Card>
+            <Card></Card>
+            <Card></Card>
+        </CardWrap>
+        <div></div>
       </div>
     );
   }

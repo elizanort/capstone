@@ -4,11 +4,13 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 class App extends React.Component {
+
   state = {
     userInformation: {
       firstName: "",
     },
   };
+
   render() {
     return (
       <Router>

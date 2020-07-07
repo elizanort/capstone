@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './Styles/index.css';
 import App from './App';
-import LoadingScreen from './Components/Loading/LoadingScreen.js'
 import './Styles/styles.scss';
 
 
@@ -13,7 +12,7 @@ import './Font/Raleway-Regular.ttf';
 ReactDOM.render(
   
     <React.StrictMode>
-      <LoadingScreen />
+      <App />
     </React.StrictMode>,
 
   document.getElementById('root')

@@ -1,18 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './Styles/index.css';
-import App from './App';
+// import App from './App';
+import './Components/Home/HomeScreen'
 import './Styles/styles.scss';
 
 
 import * as serviceWorker from './serviceWorker';
-import './Font/Raleway-Regular.ttf';
+
+import HomeScreen from './Components/Home/HomeScreen';
 
 
 ReactDOM.render(
   
     <React.StrictMode>
-      <App />
+      <HomeScreen/>
     </React.StrictMode>,
 
   document.getElementById('root')

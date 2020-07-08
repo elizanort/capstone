@@ -8,8 +8,11 @@ class HomeScreen extends React.Component {
       display: flex;
     `;
     const Greeting = styled.p`
-      font-family: "Krona One";
-      padding: 1rem;
+      font-family: "Raleway";
+      margin: 1rem;
+      font-size: 2rem;
+      text-align: center;
+      color: #EDF6F9;
     `;
 
     const FlexCenterWrap = styled.div`
@@ -18,12 +21,20 @@ class HomeScreen extends React.Component {
       align-items: center;
     `;
     const FilterButton = styled.button`
-      border: 1px solid #006D77;
       color: black;
       margin: 0.5rem 1rem;
       padding: 0.45rem 1rem;
-      background: #EDF6F9;
+      background: linear-gradient(180deg, #EDF6F9 0%, #E6F2F5 76.04%, #8CBEC4 100%);
       border-radius: 40px;
+      color: #006D77;
+        &:hover{
+          background: #E29578;
+          box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+        }
+        &:active{
+          linear-gradient(180deg, #EDF6F9 0%, #EDF6F9 56.25%, #EADCD6 84.37%, #E29578 100%);
+        }
+      
     `;
 
     const CardWrap = styled.div`
@@ -36,12 +47,34 @@ class HomeScreen extends React.Component {
     `;
 
     const Card = styled.div`
-      height: 19rem;
-      width: 19rem;
-      border: 1px solid #006D77;
-      border-radius: 3rem;
-      margin: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 19rem;
+        width: 19rem;
+        background: #E6F2F5;
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1), 4px 4px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 3rem;
+        margin: 1rem;
     `;
+
+    const CardImgWrap = styled.div`
+      display: flex;
+      justify-content: center;
+      height: 50%;
+      width: 90%;
+      border-radius: 3rem;
+      
+      // remove this background when image is added
+      background: rgba(0, 109, 119, 0.76);
+      `
+    const CardTitle = styled.h3`
+      text-align:center;
+      font-weight: 600;
+      color: #006D77;
+      padding: 1rem 0rem;
+    `
 
     return (
       <div className="home_wrapper">
@@ -52,7 +85,7 @@ class HomeScreen extends React.Component {
         </NavWrap>
 
         <div>
-          <Greeting>Hello, Garrett</Greeting>
+          <Greeting>Hello, Garrett!</Greeting>
         </div>
 
         <FlexCenterWrap>
@@ -62,9 +95,27 @@ class HomeScreen extends React.Component {
         </FlexCenterWrap>
 
         <CardWrap>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
+            <Card>
+              <CardImgWrap>
+              </CardImgWrap>
+              <CardTitle>
+                Breathing Exercise
+              </CardTitle>
+            </Card>
+            <Card>
+            <CardImgWrap>
+              </CardImgWrap>
+              <CardTitle>
+                Tap into Yourself
+              </CardTitle>
+            </Card>
+            <Card>
+            <CardImgWrap>
+              </CardImgWrap>
+              <CardTitle>
+                Release the Weight
+              </CardTitle>
+            </Card>
         </CardWrap>
         <div></div>
       </div>

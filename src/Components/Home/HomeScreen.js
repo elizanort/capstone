@@ -9,8 +9,7 @@ class HomeScreen extends React.Component {
     `;
     const Greeting = styled.p`
       font-family: "Raleway";
-      margins: 0rem;
-      padding: 1rem;
+      margin: 1rem;
       font-size: 2rem;
       text-align: center;
       color: #EDF6F9;
@@ -25,13 +24,17 @@ class HomeScreen extends React.Component {
       color: black;
       margin: 0.5rem 1rem;
       padding: 0.45rem 1rem;
-      background: linear-gradient(180deg, #EDF6F9 0%, #EDF6F9 56.25%, #EADCD6 84.37%, #E29578 100%);
+      background: linear-gradient(180deg, #EDF6F9 0%, #E6F2F5 76.04%, #8CBEC4 100%);
       border-radius: 40px;
+      color: #006D77;
         &:hover{
           background: #E29578;
           box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
         }
-      color: #006D77;
+        &:active{
+          linear-gradient(180deg, #EDF6F9 0%, #EDF6F9 56.25%, #EADCD6 84.37%, #E29578 100%);
+        }
+      
     `;
 
     const CardWrap = styled.div`
@@ -48,12 +51,12 @@ class HomeScreen extends React.Component {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-      height: 19rem;
-      width: 19rem;
-      background: #E6F2F5;
-      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1), 4px 4px 4px rgba(0, 0, 0, 0.1);
-      border-radius: 3rem;
-      margin: 1rem;
+        height: 19rem;
+        width: 19rem;
+        background: #E6F2F5;
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1), 4px 4px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 3rem;
+        margin: 1rem;
     `;
 
     const CardImgWrap = styled.div`

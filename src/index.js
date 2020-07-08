@@ -2,13 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './Styles/index.css';
 // import App from './App';
-import './Components/Home/HomeScreen'
 import './Styles/styles.scss';
 
 
 import * as serviceWorker from './serviceWorker';
 
 import HomeScreen from './Components/Home/HomeScreen';
+// import InformationScreen from './Components/Information/InformationScreen';
+
 
 
 ReactDOM.render(

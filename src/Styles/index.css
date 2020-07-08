@@ -1,7 +1,7 @@
 body {
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Monserrat';
+  font-family: 'Raleway';
 }
 
 code {
@@ -19,7 +19,7 @@ code {
   display: block;
 }
 
-.button{
-  background-color: white;
+button{
+  background: transparent;
   border: none;
 }

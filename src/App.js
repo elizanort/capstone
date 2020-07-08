@@ -14,18 +14,20 @@ class App extends React.Component {
   render() {
     return (
       <Router>
+        <div className="background">
         <Route exact path="/">
           <div className="homeScreen">
             <HomeScreen userInformation={this.state.userInformation} />
-            <Link style={linkStyle} to="/Exercise">
-              <IconOrTextOrButtonThatLinksToExercisePage />
+            <Link to="/Exercise">
+              <div>IconOrTextOrButtonThatLinksToExercisePage</div>
             </Link>{" "}
           </div>
         </Route>
 
         <Route path="/Exercise">
-          <Exercise whichExercise={this.whichExercise} />
+          <div>Exercise</div>
         </Route>
+        </div>
       </Router>
     );
   }

@@ -9,6 +9,24 @@ code {
     monospace;
 }
 
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.background {
+  width: 100vw;
+  height: 100vh;
+  background-color: linear-gradient(180deg, rgba(237, 246, 249, 0.5) 13.02%, rgba(210, 230, 234, 0.5) 48.96%, rgba(137, 188, 194, 0.5) 77.08%, rgba(85, 158, 166, 0.5) 88.02%, rgba(0, 109, 119, 0.5) 100%), #EDF6F9;
+}
+
 .loading-icon { /*Splash Screen Logo Div Container*/
   width: 186px;
 }
@@ -17,6 +35,7 @@ code {
   max-width: 100%;
   max-height: 100%;
   display: block;
+}
 
 .button{
   background-color: white;

@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './Styles/index.css';
-// import App from './App';
+import App from './App';
 import './Styles/styles.scss';
 
 
 import * as serviceWorker from './serviceWorker';
 
-import HomeScreen from './Components/Home/HomeScreen';
+
 // import InformationScreen from './Components/Information/InformationScreen';
 
 
@@ -15,7 +15,7 @@ import HomeScreen from './Components/Home/HomeScreen';
 ReactDOM.render(
   
     <React.StrictMode>
-      <HomeScreen/>
+      <App />
     </React.StrictMode>,
 
   document.getElementById('root')

@@ -2,6 +2,26 @@ import React from "react";
 import styled from "styled-components";
 
 class HomeScreen extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      relaxToggle: false,
+      refocusToggle: false,
+      reenergizeToggle: false
+    }
+  }
+
+  handleFilterClick = (id) => {
+    if (id === 1) {
+      this.setState({ relaxToggle: true })
+    } else if (id === 2) {
+      this.setState({ refocusToggle: true })
+    } else if (id === 3) {
+      this.setState({ reenergizeToggle: true })
+    }
+  }
+
   render() {
     const NavWrap = styled.div`
       padding: 1rem;
@@ -12,7 +32,7 @@ class HomeScreen extends React.Component {
       margin: 1rem;
       font-size: 2rem;
       text-align: center;
-      color: #EDF6F9;
+      color: #edf6f9;
     `;
 
     const FlexCenterWrap = styled.div`
@@ -47,16 +67,16 @@ class HomeScreen extends React.Component {
     `;
 
     const Card = styled.div`
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 19rem;
-        width: 19rem;
-        background: #E6F2F5;
-        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1), 4px 4px 4px rgba(0, 0, 0, 0.1);
-        border-radius: 3rem;
-        margin: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 19rem;
+      width: 19rem;
+      background: #e6f2f5;
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1), 4px 4px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 3rem;
+      margin: 1rem;
     `;
 
     const CardImgWrap = styled.div`
@@ -65,16 +85,16 @@ class HomeScreen extends React.Component {
       height: 50%;
       width: 90%;
       border-radius: 3rem;
-      
+
       // remove this background when image is added
       background: rgba(0, 109, 119, 0.76);
-      `
+    `;
     const CardTitle = styled.h3`
-      text-align:center;
+      text-align: center;
       font-weight: 600;
-      color: #006D77;
+      color: #006d77;
       padding: 1rem 0rem;
-    `
+    `;
 
     return (
       <div className="home_wrapper">
@@ -89,33 +109,68 @@ class HomeScreen extends React.Component {
         </div>
 
         <FlexCenterWrap>
-          <FilterButton>Energize</FilterButton>
-          <FilterButton>Refocus</FilterButton>
-          <FilterButton>Relax</FilterButton>
+          <FilterButton onClick={()=> this.handleFilterClick(3)}>Energize</FilterButton>
+          <FilterButton onClick={()=> this.handleFilterClick(2)}>Refocus</FilterButton>
+          <FilterButton onClick={()=> this.handleFilterClick(1)}>Relax</FilterButton>
         </FlexCenterWrap>
 
         <CardWrap>
-            <Card>
-              <CardImgWrap>
-              </CardImgWrap>
-              <CardTitle>
-                Breathing Exercise
-              </CardTitle>
-            </Card>
-            <Card>
-            <CardImgWrap>
-              </CardImgWrap>
-              <CardTitle>
-                Tap into Yourself
-              </CardTitle>
-            </Card>
-            <Card>
-            <CardImgWrap>
-              </CardImgWrap>
-              <CardTitle>
-                Release the Weight
-              </CardTitle>
-            </Card>
+          <ul>
+          {this.props.exerciseInformation.map((exercise) => {
+            if (this.state.reenergizeToggle === true) {
+              {this.filter(exercise => {
+                if (exercise.type === "energize") {
+                  return (
+                    <li>
+                      <Card>
+                        <CardImgWrap>{exercise.image}</CardImgWrap>
+                        <CardTitle>{exercise.title}</CardTitle>
+                      </Card>
+                    </li>
+                  );
+                }
+              });
+              }
+            } else if (this.state.refocusToggle === true) {
+              {this.filter(exercise => {
+                if (exercise.type === "refocus") {
+                  return (
+                    <li>
+                      <Card>
+                        <CardImgWrap>{exercise.image}</CardImgWrap>
+                        <CardTitle>{exercise.title}</CardTitle>
+                      </Card>
+                    </li>
+                  );
+                }
+              });
+              }
+            } else if (this.state.relaxToggle === true) {
+              {this.filter(exercise => {
+                if (exercise.type === "relax") {
+                  return (
+                    <li>
+                      <Card>
+                        <CardImgWrap>{exercise.image}</CardImgWrap>
+                        <CardTitle>{exercise.title}</CardTitle>
+                      </Card>
+                    </li>
+                  );
+                }
+              });
+              }
+            } else {
+              return (
+                <li>
+                  <Card>
+                    <CardImgWrap>{exercise.image}</CardImgWrap>
+                    <CardTitle>{exercise.title}</CardTitle>
+                  </Card>
+                </li>
+              )
+            }
+          })}
+          </ul>
         </CardWrap>
         <div></div>
       </div>

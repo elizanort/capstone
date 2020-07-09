@@ -4,15 +4,13 @@ import HomeScreen from "./Components/Home/HomeScreen";
 // import { Link } from "react-router-dom";
 
 class App extends React.Component {
-
   state = {
     userInformation: {
       firstName: "",
     },
   };
 
-  exerciseInformation= {
-
+  exerciseInformation = {
     energize1: {
       image: "./image/img.jpg",
       title: "Breathing Exercise",
@@ -54,15 +52,16 @@ class App extends React.Component {
       information: "This is some information about the exercise",
       type: "refocus",
     },
-    
   };
-  
 
   render() {
-    return(
-    <HomeScreen userInformation={this.state.userInformation} exerciseInformation = {this.exerciseInformation}/>
-    )
-  };
+    return (
+      <HomeScreen
+        userInformation={this.state.userInformation}
+        exerciseInformation={this.exerciseInformation}
+      />
+    );
+  }
   //   return (
   //     <Router>
   //       <Route exact path="/">
@@ -74,9 +73,18 @@ class App extends React.Component {
   //         </div>
   //       </Route>
 
-  //       <Route path="/Exercise">
-  //         <Exercise whichExercise={this.whichExercise} />
+  //       <Route path="/Info">
+  //         <Information randomProp={this.ifWeNeedProps} />
   //       </Route>
+
+  //       <Route path="/Exercise">
+  //         <Exercise randomProp={this.ifWeNeedProps} />
+  //       </Route>
+
+  //       <Route path="/Finished">
+  //         <Finished randomProp={this.ifWeNeedProps} />
+  //       </Route>
+
   //     </Router>
   //   )
   // }

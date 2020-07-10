@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ActivityTimer from './Timer.js';
 
 class BreatheAnimation extends Component {
 
@@ -9,6 +10,7 @@ class BreatheAnimation extends Component {
                 <div className="animationContainer">
                     <div className="circle"></div>
                     <h2 className="animationText">Breathe With The Circle</h2>
+                    {/* <ActivityTimer /> */}
                 </div>
             </div>
         )

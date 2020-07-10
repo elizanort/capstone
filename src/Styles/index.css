@@ -92,3 +92,14 @@ button{
     opacity: 0;
   }
 }
+
+/* EXERCISE TIMER */
+
+.timerContainer {
+  color: black;
+  margin: 0.5rem 1rem;
+  padding: 0.45rem 1rem;
+  background: linear-gradient(180deg, #EDF6F9 0%, #E6F2F5 76.04%, #8CBEC4 100%);
+  border-radius: 40px;
+  color: #006D77;
+}

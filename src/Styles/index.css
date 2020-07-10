@@ -23,3 +23,72 @@ button{
   background: transparent;
   border: none;
 }
+
+/* BREATHE ANIMATION STYLES AND KEYFRAMES */
+
+.screenContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.animationContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40rem;
+  width: 20rem;
+  background: #e6f2f5;
+  border-radius: 3rem;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1), 4px 4px 4px rgba(0, 0, 0, 0.1);
+  margin: 1rem;
+}
+
+.circle {
+  position: relative;
+  height: 75px;
+  width: 75px;
+  background-color: #006D77;
+  border-radius: 50%;
+  animation: circleAnimation 12s infinite 4s forwards linear;
+  animation-timing-function: ease;
+}
+
+.animationText {
+  font-family: Raleway, sans-serif;
+  animation: textAnimate 3s 1 1s forwards linear;
+}
+
+@keyframes circleAnimation {
+  0% {
+    height: 75px;
+    width: 75px;
+    background-color: #006D77;
+  }
+
+  50% {
+    height: 150px;
+    width: 150px;
+    background-color: #83CDBE;
+  }
+  
+  100% {
+    height: 75px;
+    width: 75px;
+    background-color: #006D77;
+  }
+}
+
+@keyframes textAnimate {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

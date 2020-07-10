@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
+import BreatheAnimation from './BreatheAnimation'
 
 export default class Exercise extends Component {
     render() {
         return (
             <div className="activity-container">
                 <div className="card">
-                    {/* Activity logic */}
+                    <BreatheAnimation />
                 </div>
 
                 <div>

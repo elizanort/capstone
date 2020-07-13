@@ -1,20 +1,12 @@
-import React, { Component } from 'react';
-import ActivityTimer from './Timer.js';
+import React from 'react';
 
-class BreatheAnimation extends Component {
-
-    render() {
-
-        return (
-            <div className="screenContainer">
-                <div className="animationContainer">
-                    <div className="circle"></div>
-                    <h2 className="animationText">Breathe With The Circle</h2>
-                    {/* <ActivityTimer /> */}
-                </div>
-            </div>
-        )
-    }
+function BreatheAnimation(props) {
+    return (
+        <div className="animationContainer">
+            <div className={props.animationClass}></div>
+            <h2 className="animationText">Breathe With The Circle</h2>
+        </div>
+    )
 }
 
 export default BreatheAnimation;

@@ -1,5 +1,6 @@
 import React from "react";
 import HomeScreen from "./Components/Home/HomeScreen";
+import Exercise from './Components/Exercise/Exercise.js';
 // import { BrowserRouter as Router, Route } from "react-router-dom";
 // import { Link } from "react-router-dom";
 
@@ -60,7 +61,7 @@ class App extends React.Component {
 
   render() {
     return(
-    <HomeScreen userInformation={this.state.userInformation} exerciseInformation = {this.exerciseInformation}/>
+    <Exercise />
     )
   };
   //   return (

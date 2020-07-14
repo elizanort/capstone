@@ -11,51 +11,50 @@ class App extends React.Component {
     },
   };
 
-  exerciseInformation= {
-
-    energize1: {
+  exerciseInformation= [
+    {
       image: "./image/img.jpg",
       title: "Breathing Exercise",
       information: "This is an exercise to help you",
       type: "energize",
     },
 
-    energize2: {
+    {
       image: "./image/img.jpg",
       title: "Breathing Exercise",
       information: "This is some information about the exercise",
       type: "energize",
     },
 
-    relax1: {
+    {
       image: "./image/img.jpg",
       title: "Breathing Exercise",
       information: "This is some information about the exercise",
       type: "relax",
     },
 
-    relax2: {
+    {
       image: "./image/img.jpg",
       title: "Breathing Exercise",
       information: "This is some information about the exercise",
       type: "relax",
     },
 
-    refocus1: {
+    {
       image: "./image/img.jpg",
       title: "Breathing Exercise",
       information: "This is some information about the exercise",
       type: "refocus",
     },
 
-    refocus2: {
+    {
       image: "./image/img.jpg",
       title: "Breathing Exercise",
       information: "This is some information about the exercise",
       type: "refocus",
     },
     
-  };
+  ];
   
 
   render() {

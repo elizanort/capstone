@@ -117,9 +117,7 @@ class HomeScreen extends React.Component {
         <CardWrap>
           <ul>
           {this.props.exerciseInformation.map((exercise) => {
-            if (this.state.reenergizeToggle === true) {
-              {this.filter(exercise => {
-                if (exercise.type === "energize") {
+            if (this.state.reenergizeToggle === true && exercise.type === 'energize') {
                   return (
                     <li>
                       <Card>
@@ -128,12 +126,8 @@ class HomeScreen extends React.Component {
                       </Card>
                     </li>
                   );
-                }
-              });
-              }
-            } else if (this.state.refocusToggle === true) {
-              {this.filter(exercise => {
-                if (exercise.type === "refocus") {
+              } else if (this.state.refocusToggle === true) {
+              this.filter(exercise => exercise.type === "refocus")
                   return (
                     <li>
                       <Card>
@@ -142,12 +136,8 @@ class HomeScreen extends React.Component {
                       </Card>
                     </li>
                   );
-                }
-              });
-              }
-            } else if (this.state.relaxToggle === true) {
-              {this.filter(exercise => {
-                if (exercise.type === "relax") {
+              } else if (this.state.relaxToggle === true) {
+              this.filter(exercise => exercise.type === "relax") 
                   return (
                     <li>
                       <Card>
@@ -156,10 +146,7 @@ class HomeScreen extends React.Component {
                       </Card>
                     </li>
                   );
-                }
-              });
-              }
-            } else {
+              }else {
               return (
                 <li>
                   <Card>

@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import React, { Component } from "react";
+import Slider from "react-slick";
 
 var filter = "";
 
@@ -17,6 +19,16 @@ class HomeScreen extends React.Component {
   };
 
   render() {
+    const CAROUSELSTYLES = {
+      //change this to whatever we want, probably copy paste from card styles and change width/height a bit?
+      className: "center",
+      centerMode: true,
+      infinite: true,
+      centerPadding: "60px",
+      slidesToShow: 3,
+      speed: 500,
+    };
+
     const NavWrap = styled.div`
       padding: 1rem;
       display: flex;
@@ -176,6 +188,24 @@ class HomeScreen extends React.Component {
           </ul>
         </CardWrap>
         <div></div>
+        <div id="CAROUSEL">
+          <h2>Center Mode</h2>
+          <Slider {...CAROUSELSTYLES}>
+            <div>
+              <h3>Title for Activity 1</h3>
+              <h3>Image for Activity 1</h3>
+            </div>
+            <div>
+              <h3>2</h3>
+            </div>
+            <div>
+              <h3>3</h3>
+            </div>
+            <div>
+              <h3>4</h3>
+            </div>
+          </Slider>
+        </div>
       </div>
     );
   }

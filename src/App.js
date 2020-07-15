@@ -63,6 +63,7 @@ class App extends React.Component {
         ),
       });
     } else if (id === 2) {
+        
       this.setState({ refocusToggle: true });
     } else if (id === 3) {
       this.setState({ reenergizeToggle: true });

@@ -4,15 +4,14 @@ import HomeScreen from "./Components/Home/HomeScreen";
 // import { Link } from "react-router-dom";
 
 class App extends React.Component {
-
   state = {
     userInformation: {
       firstName: "",
     },
-    filteredExercises: []
+    filteredExercises: [],
   };
 
-  exerciseInformation= [
+  exerciseInformation = [
     {
       image: "./image/img.jpg",
       title: "Breathing Exercise",
@@ -54,25 +53,31 @@ class App extends React.Component {
       information: "This is some information about the exercise",
       type: "refocus",
     },
-    
   ];
 
-  onFilterExercises = (id) =>{
+  onFilterExercises = (id) => {
     if (id === 1) {
-      this.setState({filteredExercises: this.filteredExercises.filter(exercise => exercise.type === 'energize')})
+      this.setState({
+        filteredExercises: this.exerciseInformation.filter(
+          (exercise) => exercise.type === "energize"
+        ),
+      });
     } else if (id === 2) {
-      this.setState({ refocusToggle: true })
+      this.setState({ refocusToggle: true });
     } else if (id === 3) {
-      this.setState({ reenergizeToggle: true })
+      this.setState({ reenergizeToggle: true });
     }
-  }
-  
+  };
 
   render() {
-    return(
-    <HomeScreen userInformation={this.state.userInformation} exerciseInformation = {this.state.filteredExercises}/>
-    )
-  };
+    return (
+      <HomeScreen
+        onFilterExercises={this.onFilterExercises}
+        userInformation={this.state.userInformation}
+        exerciseInformation={this.state.filteredExercises}
+      />
+    );
+  }
   //   return (
   //     <Router>
   //       <Route exact path="/">

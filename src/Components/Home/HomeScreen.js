@@ -14,13 +14,7 @@ class HomeScreen extends React.Component {
   }
 
   handleFilterClick = (id) => {
-    if (id === 1) {
-      this.setState({ relaxToggle: true })
-    } else if (id === 2) {
-      this.setState({ refocusToggle: true })
-    } else if (id === 3) {
-      this.setState({ reenergizeToggle: true })
-    }
+    this.props.onFilterExercises(id)
   }
 
   render() {

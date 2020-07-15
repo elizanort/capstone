@@ -1,5 +1,6 @@
 import React from "react";
 import HomeScreen from "./Components/Home/HomeScreen";
+import Exercise from './Components/Exercise/Exercise.js';
 // import { BrowserRouter as Router, Route } from "react-router-dom";
 // import { Link } from "react-router-dom";
 
@@ -79,6 +80,7 @@ class App extends React.Component {
       />
     );
   }
+
   //   return (
   //     <Router>
   //       <Route exact path="/">

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import BreatheAnimation from './BreatheAnimation.js';
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 export default class Exercise extends Component {
     constructor(props) {
@@ -44,6 +45,9 @@ export default class Exercise extends Component {
         {if (seconds < 10) {
             seconds = "0" + (this.state.time - (minutes*60))
         }};
+        {if (this.state.time === 0) {
+          return <Redirect to='./Finished/Finished.js' />
+        }}
         return (
             <div className="screenContainer">
                 <div className="activityContainer">
@@ -56,4 +60,4 @@ export default class Exercise extends Component {
             </div>
         )
     }
-
+  };

@@ -1,8 +1,9 @@
 import React from "react";
 import HomeScreen from "./Components/Home/HomeScreen";
-import Exercise from './Components/Exercise/Exercise.js';
-// import { BrowserRouter as Router, Route } from "react-router-dom";
-// import { Link } from "react-router-dom";
+import Exercise from "./Components/Exercise/Exercise.js";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import InformationScreen from "./Components/Information/InformationScreen";
+import Finished from "./Components/Finished/Finished";
 
 class App extends React.Component {
   state = {
@@ -14,6 +15,7 @@ class App extends React.Component {
     focusToggle: false,
     relaxToggle: false,
     activeButton: false,
+    linkDestination: ""
   };
 
   exerciseInformation = [
@@ -22,6 +24,7 @@ class App extends React.Component {
       title: "Energize 1",
       information: "This is an exercise to help you",
       type: "energize",
+      id: 1,
     },
 
     {
@@ -29,13 +32,15 @@ class App extends React.Component {
       title: "Energize 2",
       information: "This is some information about the exercise",
       type: "energize",
+      id: 2,
     },
 
     {
       image: "./image/img.jpg",
       title: "Breathing Exercise",
-      information: "This is some information about the exercise",
+      information: "In this exercise, synchronize your breath with the moving circle to cultivate mindfulness and slow down.",
       type: "relax",
+      id: 3,
     },
 
     {
@@ -43,6 +48,7 @@ class App extends React.Component {
       title: "Relax 2",
       information: "This is some information about the exercise",
       type: "relax",
+      id: 4,
     },
 
     {
@@ -50,6 +56,7 @@ class App extends React.Component {
       title: "Refocus 1",
       information: "This is some information about the exercise",
       type: "refocus",
+      id: 5,
     },
 
     {
@@ -57,6 +64,7 @@ class App extends React.Component {
       title: "Refocus 2",
       information: "This is some information about the exercise",
       type: "refocus",
+      id: 6,
     },
   ];
 
@@ -91,47 +99,56 @@ class App extends React.Component {
         ),
         activeButton: true,
       });
-    } else if (this.state.energizeToggle === false
-      && this.state.focusToggle === false
-      && this.state.relaxToggle === false) {
-        this.setState({
-          filteredExercises:
-          this.exerciseInformation.map(
-            (exercise) => exercise.type === "energize"
-            || "refocus" || "relax"
-          )
-        });
-      }
+    } else if (
+      this.state.energizeToggle === false &&
+      this.state.focusToggle === false &&
+      this.state.relaxToggle === false
+    ) {
+      this.setState({
+        filteredExercises: this.exerciseInformation.map(
+          (exercise) => exercise.type === "energize" || "refocus" || "relax"
+        ),
+      });
+    }
   };
 
-  render() {
-    return (
-      <HomeScreen
-        onFilterExercises={this.onFilterExercises}
-        userInformation={this.state.userInformation}
-        exerciseInformation={this.state.filteredExercises}
-        activeButton={this.state.activeButton}
-      />
-    );
+  onFilterClick = () => {
+    
   }
 
-  //   return (
-  //     <Router>
-  //       <Route exact path="/">
-  //         <div className="homeScreen">
-  //           <HomeScreen userInformation={this.state.userInformation} exerciseInformation = {this.exerciseInformation}/>
-  //           <Link style={linkStyle} to="/Exercise">
-  //             <IconOrTextOrButtonThatLinksToExercisePage />
-  //           </Link>{" "}
-  //         </div>
-  //       </Route>
+  render() {
+    // return (
+    //   <HomeScreen
+    //     onFilterExercises={this.onFilterExercises}
+    //     userInformation={this.state.userInformation}
+    //     exerciseInformation={this.state.filteredExercises}
+    //     activeButton={this.state.activeButton}
+    //   />
+    // );
 
-  //       <Route path="/Exercise">
-  //         <Exercise whichExercise={this.whichExercise} />
-  //       </Route>
-  //     </Router>
-  //   )
-  // }
+    return (
+      <Router>
+        <Route exact path="/">
+            <HomeScreen
+              onFilterExercises={this.onFilterExercises}
+              userInformation={this.state.userInformation}
+              exerciseInformation={this.state.filteredExercises}
+              activeButton={this.state.activeButton}
+            />
+        </Route>
+        <Route path="/information">
+          <InformationScreen />
+        </Route>
+        <Route path="/exercise">
+          <Exercise whichExercise={this.whichExercise} />
+        </Route>
+        <Route path="/finish">
+          <Finished />
+        </Route>
+      </Router>
+    );
+  }
 }
 
 export default App;
+

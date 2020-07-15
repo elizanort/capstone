@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 class HomeScreen extends React.Component {
   constructor(props) {
@@ -7,12 +8,12 @@ class HomeScreen extends React.Component {
 
     this.state = {
       exerciseInformation: props.exerciseInformation,
-    }
+    };
   }
 
   handleFilterClick = (id) => {
-    this.props.onFilterExercises(id)
-  }
+    this.props.onFilterExercises(id);
+  };
 
   render() {
     const NavWrap = styled.div`
@@ -47,7 +48,9 @@ class HomeScreen extends React.Component {
           linear-gradient(180deg, #EDF6F9 0%, #EDF6F9 56.25%, #EADCD6 84.37%, #E29578 100%);
         }
 
-        ${({activeButton}) => activeButton && `
+        ${({ activeButton }) =>
+          activeButton &&
+          `
             background: #E29578;
         `}
       
@@ -94,32 +97,47 @@ class HomeScreen extends React.Component {
 
     return (
       <div className="home_wrapper">
-        <NavWrap>
-        </NavWrap>
+        <NavWrap></NavWrap>
 
         <div>
           <Greeting>Hello, Garrett!</Greeting>
         </div>
 
         <FlexCenterWrap>
-          <FilterButton active={this.state.activeButton} onClick={()=> this.handleFilterClick(1)}>Energize</FilterButton>
-          <FilterButton active={this.state.activeButton} onClick={()=> this.handleFilterClick(2)}>Refocus</FilterButton>
-          <FilterButton active={this.state.activeButton} onClick={()=> this.handleFilterClick(3)}>Relax</FilterButton>
+          <FilterButton
+            active={this.state.activeButton}
+            onClick={() => this.handleFilterClick(1)}
+          >
+            Energize
+          </FilterButton>
+          <FilterButton
+            active={this.state.activeButton}
+            onClick={() => this.handleFilterClick(2)}
+          >
+            Refocus
+          </FilterButton>
+          <FilterButton
+            active={this.state.activeButton}
+            onClick={() => this.handleFilterClick(3)}
+          >
+            Relax
+          </FilterButton>
         </FlexCenterWrap>
 
         <CardWrap>
           <ul>
-          {this.props.exerciseInformation.map((exercise) => {
+            {this.props.exerciseInformation.map((exercise) => {
               return (
                 <li>
-                  <Card>
-                    <CardImgWrap>{exercise.image}</CardImgWrap>
-                    <CardTitle>{exercise.title}</CardTitle>
-                  </Card>
+                  <Link to="/information">
+                    <Card>
+                      <CardImgWrap>{exercise.image}</CardImgWrap>
+                      <CardTitle>{exercise.title}</CardTitle>
+                    </Card>
+                  </Link>
                 </li>
-              )
-            }
-          )}
+              );
+            })}
           </ul>
         </CardWrap>
         <div></div>

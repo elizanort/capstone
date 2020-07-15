@@ -6,9 +6,6 @@ class HomeScreen extends React.Component {
     super(props);
 
     this.state = {
-      relaxToggle: false,
-      refocusToggle: false,
-      reenergizeToggle: false,
       exerciseInformation: props.exerciseInformation,
     }
   }
@@ -49,6 +46,10 @@ class HomeScreen extends React.Component {
         &:active{
           linear-gradient(180deg, #EDF6F9 0%, #EDF6F9 56.25%, #EADCD6 84.37%, #E29578 100%);
         }
+
+        ${({activeButton}) => activeButton && `
+            background: #E29578;
+        `}
       
     `;
 
@@ -101,45 +102,14 @@ class HomeScreen extends React.Component {
         </div>
 
         <FlexCenterWrap>
-          <FilterButton onClick={()=> this.handleFilterClick(3)}>Energize</FilterButton>
-          <FilterButton onClick={()=> this.handleFilterClick(2)}>Refocus</FilterButton>
-          <FilterButton onClick={()=> this.handleFilterClick(1)}>Relax</FilterButton>
+          <FilterButton active={this.state.activeButton} onClick={()=> this.handleFilterClick(1)}>Energize</FilterButton>
+          <FilterButton active={this.state.activeButton} onClick={()=> this.handleFilterClick(2)}>Refocus</FilterButton>
+          <FilterButton active={this.state.activeButton} onClick={()=> this.handleFilterClick(3)}>Relax</FilterButton>
         </FlexCenterWrap>
 
         <CardWrap>
           <ul>
           {this.props.exerciseInformation.map((exercise) => {
-            if (this.state.reenergizeToggle === true) { 
-              this.props.exerciseInformation.filter(exercise => exercise.type === 'energize') 
-                  return (
-                    <li>
-                      <Card>
-                        <CardImgWrap>{exercise.image}</CardImgWrap>
-                        <CardTitle>{exercise.title}</CardTitle>
-                      </Card>
-                    </li>
-                  );
-              } else if (this.state.refocusToggle === true) {
-              this.exerciseInformation.filter(exercise => exercise.type === "refocus")
-                  return (
-                    <li>
-                      <Card>
-                        <CardImgWrap>{exercise.image}</CardImgWrap>
-                        <CardTitle>{exercise.title}</CardTitle>
-                      </Card>
-                    </li>
-                  );
-              } else if (this.state.relaxToggle === true) {
-              this.exerciseInformation.filter(exercise => exercise.type === "relax") 
-                  return (
-                    <li>
-                      <Card>
-                        <CardImgWrap>{exercise.image}</CardImgWrap>
-                        <CardTitle>{exercise.title}</CardTitle>
-                      </Card>
-                    </li>
-                  );
-              }else {
               return (
                 <li>
                   <Card>
@@ -149,7 +119,7 @@ class HomeScreen extends React.Component {
                 </li>
               )
             }
-          })}
+          )}
           </ul>
         </CardWrap>
         <div></div>

@@ -5,65 +5,82 @@ import Exercise from './Components/Exercise/Exercise.js';
 // import { Link } from "react-router-dom";
 
 class App extends React.Component {
-
   state = {
     userInformation: {
       firstName: "",
     },
+    filteredExercises: [],
   };
 
-  exerciseInformation= {
-
-    energize1: {
+  exerciseInformation = [
+    {
       image: "./image/img.jpg",
       title: "Breathing Exercise",
       information: "This is an exercise to help you",
       type: "energize",
     },
 
-    energize2: {
+    {
       image: "./image/img.jpg",
       title: "Breathing Exercise",
       information: "This is some information about the exercise",
       type: "energize",
     },
 
-    relax1: {
+    {
       image: "./image/img.jpg",
       title: "Breathing Exercise",
       information: "This is some information about the exercise",
       type: "relax",
     },
 
-    relax2: {
+    {
       image: "./image/img.jpg",
       title: "Breathing Exercise",
       information: "This is some information about the exercise",
       type: "relax",
     },
 
-    refocus1: {
+    {
       image: "./image/img.jpg",
       title: "Breathing Exercise",
       information: "This is some information about the exercise",
       type: "refocus",
     },
 
-    refocus2: {
+    {
       image: "./image/img.jpg",
       title: "Breathing Exercise",
       information: "This is some information about the exercise",
       type: "refocus",
     },
-    
+  ];
+
+  onFilterExercises = (id) => {
+    if (id === 1) {
+      this.setState({
+        filteredExercises: this.exerciseInformation.filter(
+          (exercise) => exercise.type === "energize"
+        ),
+      });
+    } else if (id === 2) {
+        
+      this.setState({ refocusToggle: true });
+    } else if (id === 3) {
+      this.setState({ reenergizeToggle: true });
+    }
   };
-  
 
   render() {
-    return(
-    <Exercise />
-    )
-  };
+    return (
+      <HomeScreen
+        onFilterExercises={this.onFilterExercises}
+        userInformation={this.state.userInformation}
+        exerciseInformation={this.state.filteredExercises}
+      />
+    );
+  }
+
   //   return (
   //     <Router>
   //       <Route exact path="/">

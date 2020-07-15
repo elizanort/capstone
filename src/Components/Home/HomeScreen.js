@@ -8,18 +8,13 @@ class HomeScreen extends React.Component {
     this.state = {
       relaxToggle: false,
       refocusToggle: false,
-      reenergizeToggle: false
+      reenergizeToggle: false,
+      exerciseInformation: props.exerciseInformation,
     }
   }
 
   handleFilterClick = (id) => {
-    if (id === 1) {
-      this.setState({ relaxToggle: true })
-    } else if (id === 2) {
-      this.setState({ refocusToggle: true })
-    } else if (id === 3) {
-      this.setState({ reenergizeToggle: true })
-    }
+    this.props.onFilterExercises(id)
   }
 
   render() {
@@ -99,9 +94,6 @@ class HomeScreen extends React.Component {
     return (
       <div className="home_wrapper">
         <NavWrap>
-          <button className="button">
-            <i class="fas fa-bars"></i>
-          </button>
         </NavWrap>
 
         <div>
@@ -117,9 +109,8 @@ class HomeScreen extends React.Component {
         <CardWrap>
           <ul>
           {this.props.exerciseInformation.map((exercise) => {
-            if (this.state.reenergizeToggle === true) {
-              {this.filter(exercise => {
-                if (exercise.type === "energize") {
+            if (this.state.reenergizeToggle === true) { 
+              this.props.exerciseInformation.filter(exercise => exercise.type === 'energize') 
                   return (
                     <li>
                       <Card>
@@ -128,12 +119,8 @@ class HomeScreen extends React.Component {
                       </Card>
                     </li>
                   );
-                }
-              });
-              }
-            } else if (this.state.refocusToggle === true) {
-              {this.filter(exercise => {
-                if (exercise.type === "refocus") {
+              } else if (this.state.refocusToggle === true) {
+              this.exerciseInformation.filter(exercise => exercise.type === "refocus")
                   return (
                     <li>
                       <Card>
@@ -142,12 +129,8 @@ class HomeScreen extends React.Component {
                       </Card>
                     </li>
                   );
-                }
-              });
-              }
-            } else if (this.state.relaxToggle === true) {
-              {this.filter(exercise => {
-                if (exercise.type === "relax") {
+              } else if (this.state.relaxToggle === true) {
+              this.exerciseInformation.filter(exercise => exercise.type === "relax") 
                   return (
                     <li>
                       <Card>
@@ -156,10 +139,7 @@ class HomeScreen extends React.Component {
                       </Card>
                     </li>
                   );
-                }
-              });
-              }
-            } else {
+              }else {
               return (
                 <li>
                   <Card>

@@ -9,6 +9,7 @@ class App extends React.Component {
     userInformation: {
       firstName: "",
     },
+    filteredExercises: []
   };
 
   exerciseInformation= [
@@ -55,11 +56,21 @@ class App extends React.Component {
     },
     
   ];
+
+  onFilterExercises = (id) =>{
+    if (id === 1) {
+      this.setState({filteredExercises: this.filteredExercises.filter(exercise => exercise.type === 'energize')})
+    } else if (id === 2) {
+      this.setState({ refocusToggle: true })
+    } else if (id === 3) {
+      this.setState({ reenergizeToggle: true })
+    }
+  }
   
 
   render() {
     return(
-    <HomeScreen userInformation={this.state.userInformation} exerciseInformation = {this.exerciseInformation}/>
+    <HomeScreen userInformation={this.state.userInformation} exerciseInformation = {this.state.filteredExercises}/>
     )
   };
   //   return (

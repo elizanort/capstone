@@ -8,7 +8,8 @@ class HomeScreen extends React.Component {
     this.state = {
       relaxToggle: false,
       refocusToggle: false,
-      reenergizeToggle: false
+      reenergizeToggle: false,
+      exerciseInformation: props.exerciseInformation,
     }
   }
 
@@ -99,9 +100,6 @@ class HomeScreen extends React.Component {
     return (
       <div className="home_wrapper">
         <NavWrap>
-          <button className="button">
-            <i class="fas fa-bars"></i>
-          </button>
         </NavWrap>
 
         <div>
@@ -117,7 +115,8 @@ class HomeScreen extends React.Component {
         <CardWrap>
           <ul>
           {this.props.exerciseInformation.map((exercise) => {
-            if (this.state.reenergizeToggle === true && exercise.type === 'energize') {
+            if (this.state.reenergizeToggle === true) { 
+              this.props.exerciseInformation.filter(exercise => exercise.type === 'energize') 
                   return (
                     <li>
                       <Card>
@@ -127,7 +126,7 @@ class HomeScreen extends React.Component {
                     </li>
                   );
               } else if (this.state.refocusToggle === true) {
-              this.filter(exercise => exercise.type === "refocus")
+              this.exerciseInformation.filter(exercise => exercise.type === "refocus")
                   return (
                     <li>
                       <Card>
@@ -137,7 +136,7 @@ class HomeScreen extends React.Component {
                     </li>
                   );
               } else if (this.state.relaxToggle === true) {
-              this.filter(exercise => exercise.type === "relax") 
+              this.exerciseInformation.filter(exercise => exercise.type === "relax") 
                   return (
                     <li>
                       <Card>

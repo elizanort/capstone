@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export default class InformationScreen extends Component {
   render() {
@@ -56,7 +57,7 @@ export default class InformationScreen extends Component {
     return (
       <div>
         <Nav>
-          <i class="fas fa-chevron-left"></i>
+          <Link path="/"><i class="fas fa-chevron-left"></i></Link>
         </Nav>
         <Header>Relax</Header>
         <FlexColumnWrap>

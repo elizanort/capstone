@@ -1,26 +1,19 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 class HomeScreen extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      relaxToggle: false,
-      refocusToggle: false,
-      reenergizeToggle: false
-    }
+      exerciseInformation: props.exerciseInformation,
+    };
   }
 
   handleFilterClick = (id) => {
-    if (id === 1) {
-      this.setState({ relaxToggle: true })
-    } else if (id === 2) {
-      this.setState({ refocusToggle: true })
-    } else if (id === 3) {
-      this.setState({ reenergizeToggle: true })
-    }
-  }
+    this.props.onFilterExercises(id);
+  };
 
   render() {
     const NavWrap = styled.div`
@@ -54,6 +47,12 @@ class HomeScreen extends React.Component {
         &:active{
           linear-gradient(180deg, #EDF6F9 0%, #EDF6F9 56.25%, #EADCD6 84.37%, #E29578 100%);
         }
+
+        ${({ activeButton }) =>
+          activeButton &&
+          `
+            background: #E29578;
+        `}
       
     `;
 
@@ -98,78 +97,47 @@ class HomeScreen extends React.Component {
 
     return (
       <div className="home_wrapper">
-        <NavWrap>
-          <button className="button">
-            <i class="fas fa-bars"></i>
-          </button>
-        </NavWrap>
+        <NavWrap></NavWrap>
 
         <div>
           <Greeting>Hello, Garrett!</Greeting>
         </div>
 
         <FlexCenterWrap>
-          <FilterButton onClick={()=> this.handleFilterClick(3)}>Energize</FilterButton>
-          <FilterButton onClick={()=> this.handleFilterClick(2)}>Refocus</FilterButton>
-          <FilterButton onClick={()=> this.handleFilterClick(1)}>Relax</FilterButton>
+          <FilterButton
+            active={this.state.activeButton}
+            onClick={() => this.handleFilterClick(1)}
+          >
+            Energize
+          </FilterButton>
+          <FilterButton
+            active={this.state.activeButton}
+            onClick={() => this.handleFilterClick(2)}
+          >
+            Refocus
+          </FilterButton>
+          <FilterButton
+            active={this.state.activeButton}
+            onClick={() => this.handleFilterClick(3)}
+          >
+            Relax
+          </FilterButton>
         </FlexCenterWrap>
 
         <CardWrap>
           <ul>
-          {this.props.exerciseInformation.map((exercise) => {
-            if (this.state.reenergizeToggle === true) {
-              {this.filter(exercise => {
-                if (exercise.type === "energize") {
-                  return (
-                    <li>
-                      <Card>
-                        <CardImgWrap>{exercise.image}</CardImgWrap>
-                        <CardTitle>{exercise.title}</CardTitle>
-                      </Card>
-                    </li>
-                  );
-                }
-              });
-              }
-            } else if (this.state.refocusToggle === true) {
-              {this.filter(exercise => {
-                if (exercise.type === "refocus") {
-                  return (
-                    <li>
-                      <Card>
-                        <CardImgWrap>{exercise.image}</CardImgWrap>
-                        <CardTitle>{exercise.title}</CardTitle>
-                      </Card>
-                    </li>
-                  );
-                }
-              });
-              }
-            } else if (this.state.relaxToggle === true) {
-              {this.filter(exercise => {
-                if (exercise.type === "relax") {
-                  return (
-                    <li>
-                      <Card>
-                        <CardImgWrap>{exercise.image}</CardImgWrap>
-                        <CardTitle>{exercise.title}</CardTitle>
-                      </Card>
-                    </li>
-                  );
-                }
-              });
-              }
-            } else {
+            {this.props.exerciseInformation.map((exercise) => {
               return (
                 <li>
-                  <Card>
-                    <CardImgWrap>{exercise.image}</CardImgWrap>
-                    <CardTitle>{exercise.title}</CardTitle>
-                  </Card>
+                  <Link to="/information">
+                    <Card>
+                      <CardImgWrap>{exercise.image}</CardImgWrap>
+                      <CardTitle>{exercise.title}</CardTitle>
+                    </Card>
+                  </Link>
                 </li>
-              )
-            }
-          })}
+              );
+            })}
           </ul>
         </CardWrap>
         <div></div>

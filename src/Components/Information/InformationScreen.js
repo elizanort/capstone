@@ -1,8 +1,23 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, withRouter} from "react-router-dom";
 
-export default class InformationScreen extends Component {
+ class InformationScreen extends Component {
+   state={
+     exercise: {}
+   }
+
+  componentDidMount(){
+    this.setState({exercise: {...this.getExerciseById()}})
+  }
+
+
+
+  getExerciseById=()=>{
+    const id = parseInt(this.props.match.params.exerciseId)
+
+      return this.props.exerciseList.find(ex=> parseInt(ex.id) === id) || {}
+  }
   render() {
     const Nav = styled.button`
       padding: 1rem;
@@ -57,15 +72,15 @@ export default class InformationScreen extends Component {
     return (
       <div>
         <Nav>
-          <Link path="/"><i class="fas fa-chevron-left"></i></Link>
+          <a onClick={()=> this.props.history.goBack()}><i class="fas fa-chevron-left"></i></a>
         </Nav>
         <Header>Relax</Header>
         <FlexColumnWrap>
           <InfoCard>
             <FlexColumnWrap>
-              <CardHeader>{this.props.exerciseInformation.title} </CardHeader>
+              <CardHeader>{this.state.exercise.title} </CardHeader>
               <CardText>
-                {this.props.exerciseInformation.information}
+                {this.state.exercise.information}
               </CardText>
               <Link path="/exercise"><CtaButton>BEGIN</CtaButton></Link>
             </FlexColumnWrap>
@@ -75,3 +90,5 @@ export default class InformationScreen extends Component {
     );
   }
 }
+
+export default withRouter(InformationScreen)

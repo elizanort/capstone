@@ -12,7 +12,7 @@ class HomeScreen extends React.Component {
   }
 
   handleFilterClick = (id) => {
-    this.props.onFilterExercises(id);
+    this.props.onFilterClick(id);
   };
 
   render() {
@@ -106,19 +106,19 @@ class HomeScreen extends React.Component {
         <FlexCenterWrap>
           <FilterButton
             active={this.state.activeButton}
-            onClick={() => this.props.filterClick(1)}
+            onClick={() => this.handleFilterClick(1)}
           >
             Energize
           </FilterButton>
           <FilterButton
             active={this.state.activeButton}
-            onClick={() => this.props.filterClick(2)}
+            onClick={() => this.handleFilterClick(2)}
           >
             Refocus
           </FilterButton>
           <FilterButton
             active={this.state.activeButton}
-            onClick={() => this.props.filterClick(3)}
+            onClick={() => this.handleFilterClick(3)}
           >
             Relax
           </FilterButton>
@@ -129,7 +129,7 @@ class HomeScreen extends React.Component {
             {this.props.exerciseInformation.map((exercise) => {
               return (
                 <li>
-                  <Link to="/information">
+                  <Link to={`/information/${exercise.id}`}>
                     <Card>
                       <CardImgWrap>{exercise.image}</CardImgWrap>
                       <CardTitle>{exercise.title}</CardTitle>

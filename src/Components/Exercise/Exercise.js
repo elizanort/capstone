@@ -60,4 +60,5 @@ export default class Exercise extends Component {
             </div>
         )
     }
-  };
+}
+};

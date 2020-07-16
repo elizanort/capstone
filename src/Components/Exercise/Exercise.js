@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import BreatheAnimation from './BreatheAnimation.js';
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Link, Redirect } from "react-router-dom";
 
 export default class Exercise extends Component {
     constructor(props) {
@@ -50,6 +50,7 @@ export default class Exercise extends Component {
         }}
         return (
             <div className="screenContainer">
+              <Link><i class="fas fa-times"></i></Link>
                 <div className="activityContainer">
                     <BreatheAnimation animationClass="animatedCircle" />
             
@@ -60,5 +61,4 @@ export default class Exercise extends Component {
             </div>
         )
     }
-}
 };

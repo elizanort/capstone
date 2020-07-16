@@ -106,19 +106,19 @@ class HomeScreen extends React.Component {
         <FlexCenterWrap>
           <FilterButton
             active={this.state.activeButton}
-            onClick={() => this.handleFilterClick(1)}
+            onClick={() => this.props.filterClick(1)}
           >
             Energize
           </FilterButton>
           <FilterButton
             active={this.state.activeButton}
-            onClick={() => this.handleFilterClick(2)}
+            onClick={() => this.props.filterClick(2)}
           >
             Refocus
           </FilterButton>
           <FilterButton
             active={this.state.activeButton}
-            onClick={() => this.handleFilterClick(3)}
+            onClick={() => this.props.filterClick(3)}
           >
             Relax
           </FilterButton>

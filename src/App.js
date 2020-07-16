@@ -37,7 +37,7 @@ class App extends React.Component {
     },
 
     {
-      image: "./image/img.jpg",
+      image: "/BreatheGraphic.png",
       title: "Breathing Exercise",
       information:
         "In this exercise, synchronize your breath with the moving circle to cultivate mindfulness and slow down.",
@@ -91,15 +91,6 @@ class App extends React.Component {
 
 
   render() {
-    // return (
-    //   <HomeScreen
-    //     onFilterExercises={this.onFilterExercises}
-    //     userInformation={this.state.userInformation}
-    //     exerciseInformation={this.state.filteredExercises}
-    //     activeButton={this.state.activeButton}
-    //   />
-    // );
-
     return (
       <Router>
         <Switch>

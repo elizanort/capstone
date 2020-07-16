@@ -24,6 +24,20 @@ button{
   border: none;
 }
 
+/* BACKGROUND LOGO STYLING */
+
+.logo {
+  height: 375px;
+  width: 375px;
+  position: absolute;
+  z-index: -1;
+  background-image: url('../Images/logo-lineart.png');
+  background-size: 375px;
+  background-repeat: no-repeat;
+  background-position: 125px -50px;
+  opacity: 0.25;
+}
+
 /* BREATHE ANIMATION STYLES AND KEYFRAMES */
 
 .screenContainer {
@@ -31,7 +45,7 @@ button{
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -44,8 +58,8 @@ button{
   width: 20rem;
   background: #e6f2f5;
   border-radius: 3rem;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1), 4px 4px 4px rgba(0, 0, 0, 0.1);
-  margin: 1rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1), 4px 4px 4px rgba(0, 0, 0, 0.1);
+  margin: 2rem;
 }
 
 .animationContainer {
@@ -76,6 +90,13 @@ button{
 .animationText {
   font-family: 'Raleway', sans-serif;
   animation: textAnimate 2.5s 1 0.5s forwards linear;
+}
+
+.exitButton {
+  position: relative;
+  top: 12px;
+  right: 168px;
+  color: rgb(0, 76, 83);
 }
 
 @keyframes circleAnimation {
@@ -124,4 +145,28 @@ button{
   color: white;
   font-family: 'Raleway', sans-serif;
   font-size: 125%;
+}
+
+/* FINISH SCREEN */
+
+.finishContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 35rem;
+  width: 20rem;
+  background: #e6f2f5;
+  border-radius: 3rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1), 4px 4px 4px rgba(0, 0, 0, 0.1);
+  margin: 2rem;
+}
+
+.finishGraphic {
+  height: 18rem;
+  width: 24rem;
+  background-image: url('../Components/Finished/wfh_5.png');
+  background-size: 24rem 18rem;
+  background-position: center;
+  background-repeat: no-repeat;
 }

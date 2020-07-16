@@ -38,7 +38,7 @@ class HomeScreen extends React.Component {
       color: #006D77;
         &:hover{
           background: #E29578;
-          box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
         }
         &:active{
           linear-gradient(180deg, #EDF6F9 0%, #EDF6F9 56.25%, #EADCD6 84.37%, #E29578 100%);
@@ -69,7 +69,7 @@ class HomeScreen extends React.Component {
       height: 19rem;
       width: 19rem;
       background: #e6f2f5;
-      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1), 4px 4px 4px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2), 4px 4px 4px rgba(0, 0, 0, 0.1);
       border-radius: 3rem;
       margin: 1rem;
     `;
@@ -93,17 +93,16 @@ class HomeScreen extends React.Component {
 
     return (
       <div className="home_wrapper">
+      <div className="logo"></div>
         <NavWrap></NavWrap>
 
-        <div>
-          <Greeting>Hello, Garrett!</Greeting>
-        </div>
+          <Greeting>Welcome!</Greeting>
 
         <FlexCenterWrap>
           <FilterButton
 
             active={this.props.activeButton}
-            onClick={() => this.props.handleFilterClick("energize")}
+            onClick={() => this.props.onFilterClick("energize")}
             name='energize'
           >
             Energize
@@ -111,7 +110,7 @@ class HomeScreen extends React.Component {
           <FilterButton
 
             active={this.props.activeButton}
-            onClick={() => this.props.handleFilterClick("refocus")}
+            onClick={() => this.props.onFilterClick("refocus")}
             name='refocus'
 
           >
@@ -120,7 +119,7 @@ class HomeScreen extends React.Component {
           <FilterButton
 
             active={this.props.activeButton}
-            onClick={() => this.props.handleFilterClick("relax")}
+            onClick={() => this.props.onFilterClick("relax")}
             name='relax'
 
           >
@@ -144,7 +143,6 @@ class HomeScreen extends React.Component {
             })}
           </ul>
         </CardWrap>
-        <div></div>
       </div>
     );
   }

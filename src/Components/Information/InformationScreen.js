@@ -1,23 +1,9 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Link, withRouter} from "react-router-dom";
 
- class InformationScreen extends Component {
-   state={
-     exercise: {}
-   }
+import { Link, withRouter } from "react-router-dom";
+class InformationScreen extends Component {
 
-  componentDidMount(){
-    this.setState({exercise: {...this.getExerciseById()}})
-  }
-
-
-
-  getExerciseById=()=>{
-    const id = parseInt(this.props.match.params.exerciseId)
-
-      return this.props.exerciseList.find(ex=> parseInt(ex.id) === id) || {}
-  }
   render() {
     const Nav = styled.button`
       padding: 1rem;
@@ -82,7 +68,8 @@ import { Link, withRouter} from "react-router-dom";
               <CardText>
                 {this.state.exercise.information}
               </CardText>
-              <Link path="/exercise"><CtaButton>BEGIN</CtaButton></Link>
+              <CtaButton onClick={()=>this.props.history.push('/exercise')}>BEGIN</CtaButton>
+
             </FlexColumnWrap>
           </InfoCard>
         </FlexColumnWrap>

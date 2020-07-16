@@ -11,10 +11,6 @@ class HomeScreen extends React.Component {
     };
   }
 
-  handleFilterClick = (id) => {
-    this.props.onFilterClick(id);
-  };
-
   render() {
     const NavWrap = styled.div`
       padding: 1rem;
@@ -48,11 +44,11 @@ class HomeScreen extends React.Component {
           linear-gradient(180deg, #EDF6F9 0%, #EDF6F9 56.25%, #EADCD6 84.37%, #E29578 100%);
         }
 
-        ${({ activeButton }) =>
-          activeButton &&
+        ${(props) =>
+          props.active === props.name ?
           `
             background: #E29578;
-        `}
+        ` : `background: black`}
       
     `;
 
@@ -105,20 +101,28 @@ class HomeScreen extends React.Component {
 
         <FlexCenterWrap>
           <FilterButton
-            active={this.state.activeButton}
-            onClick={() => this.handleFilterClick(1)}
+
+            active={this.props.activeButton}
+            onClick={() => this.props.handleFilterClick("energize")}
+            name='energize'
           >
             Energize
           </FilterButton>
           <FilterButton
-            active={this.state.activeButton}
-            onClick={() => this.handleFilterClick(2)}
+
+            active={this.props.activeButton}
+            onClick={() => this.props.handleFilterClick("refocus")}
+            name='refocus'
+
           >
             Refocus
           </FilterButton>
           <FilterButton
-            active={this.state.activeButton}
-            onClick={() => this.handleFilterClick(3)}
+
+            active={this.props.activeButton}
+            onClick={() => this.props.handleFilterClick("relax")}
+            name='relax'
+
           >
             Relax
           </FilterButton>

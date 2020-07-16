@@ -63,12 +63,11 @@ export default class InformationScreen extends Component {
         <FlexColumnWrap>
           <InfoCard>
             <FlexColumnWrap>
-              <CardHeader>Breathe With Me</CardHeader>
+              <CardHeader>{this.props.exerciseInformation.title} </CardHeader>
               <CardText>
-                This is a description of the task which takes 2 minutes to
-                complete.
+                {this.props.exerciseInformation.information}
               </CardText>
-              <CtaButton>BEGIN</CtaButton>
+              <Link path="/exercise"><CtaButton>BEGIN</CtaButton></Link>
             </FlexColumnWrap>
           </InfoCard>
         </FlexColumnWrap>

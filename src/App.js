@@ -1,7 +1,7 @@
 import React from "react";
 import HomeScreen from "./Components/Home/HomeScreen";
 import Exercise from "./Components/Exercise/Exercise.js";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import InformationScreen from "./Components/Information/InformationScreen";
 import Finished from "./Components/Finished/Finished";
 
@@ -15,7 +15,7 @@ class App extends React.Component {
     focusToggle: false,
     relaxToggle: false,
     activeButton: false,
-    linkDestination: ""
+    linkDestination: "",
   };
 
   exerciseInformation = [
@@ -38,7 +38,8 @@ class App extends React.Component {
     {
       image: "./image/img.jpg",
       title: "Breathing Exercise",
-      information: "In this exercise, synchronize your breath with the moving circle to cultivate mindfulness and slow down.",
+      information:
+        "In this exercise, synchronize your breath with the moving circle to cultivate mindfulness and slow down.",
       type: "relax",
       id: 3,
     },
@@ -112,9 +113,7 @@ class App extends React.Component {
     }
   };
 
-  onFilterClick = () => {
-    
-  }
+  onFilterClick = () => {};
 
   render() {
     // return (
@@ -128,27 +127,30 @@ class App extends React.Component {
 
     return (
       <Router>
-        <Route exact path="/">
+        <Switch>
+          <Route exact path="/">
             <HomeScreen
               onFilterExercises={this.onFilterExercises}
               userInformation={this.state.userInformation}
               exerciseInformation={this.state.filteredExercises}
               activeButton={this.state.activeButton}
             />
-        </Route>
-        <Route path="/information">
-          <InformationScreen />
-        </Route>
-        <Route path="/exercise">
-          <Exercise whichExercise={this.whichExercise} />
-        </Route>
-        <Route path="/finish">
-          <Finished />
-        </Route>
+          </Route>
+          <Route path="/information">
+            <InformationScreen
+              exerciseInformation={this.state.filteredExercises}
+            />
+          </Route>
+          <Route path="/exercise">
+            <Exercise whichExercise={this.whichExercise} />
+          </Route>
+          <Route path="/finish">
+            <Finished />
+          </Route>
+        </Switch>
       </Router>
     );
   }
 }
 
 export default App;
-

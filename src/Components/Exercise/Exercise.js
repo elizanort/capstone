@@ -46,7 +46,7 @@ export default class Exercise extends Component {
             seconds = "0" + (this.state.time - (minutes*60))
         }};
         {if (this.state.time === 0) {
-          return <Redirect to='./Finished/Finished.js' />
+          return <Redirect to='/finish' />
         }}
         return (
             <div className="screenContainer">

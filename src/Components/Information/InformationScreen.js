@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-
-export default class InformationScreen extends Component {
+import { Link, withRouter } from "react-router-dom";
+class InformationScreen extends Component {
   render() {
     const Nav = styled.button`
       padding: 1rem;
@@ -67,7 +66,8 @@ export default class InformationScreen extends Component {
               <CardText>
                 {this.props.exerciseInformation.information}
               </CardText>
-              <Link path="/exercise"><CtaButton>BEGIN</CtaButton></Link>
+              <CtaButton onClick={()=>this.props.history.push('/exercise')}>BEGIN</CtaButton>
+
             </FlexColumnWrap>
           </InfoCard>
         </FlexColumnWrap>
@@ -75,3 +75,5 @@ export default class InformationScreen extends Component {
     );
   }
 }
+
+export default withRouter(InformationScreen)

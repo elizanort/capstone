@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+
 import { Link, withRouter } from "react-router-dom";
 class InformationScreen extends Component {
+
   render() {
     const Nav = styled.button`
       padding: 1rem;
@@ -56,15 +58,15 @@ class InformationScreen extends Component {
     return (
       <div>
         <Nav>
-          <Link path="/"><i class="fas fa-chevron-left"></i></Link>
+          <a onClick={()=> this.props.history.goBack()}><i class="fas fa-chevron-left"></i></a>
         </Nav>
         <Header>Relax</Header>
         <FlexColumnWrap>
           <InfoCard>
             <FlexColumnWrap>
-              <CardHeader>{this.props.exerciseInformation.title} </CardHeader>
+              <CardHeader>{this.state.exercise.title} </CardHeader>
               <CardText>
-                {this.props.exerciseInformation.information}
+                {this.state.exercise.information}
               </CardText>
               <CtaButton onClick={()=>this.props.history.push('/exercise')}>BEGIN</CtaButton>
 

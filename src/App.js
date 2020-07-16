@@ -66,9 +66,6 @@ class App extends React.Component {
       title: "Refocus 2",
       information: "This is some information about the exercise",
       type: "refocus",
-      id: 6,
-    },
-  ];
 
 
 
@@ -92,6 +89,7 @@ class App extends React.Component {
     })
   }
 
+
   render() {
     // return (
     //   <HomeScreen
@@ -107,15 +105,15 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/">
             <HomeScreen
-              filterClick={this.handleFilterClick}
+              onFilterClick={this.handleFilterClick}
               userInformation={this.state.userInformation}
               exerciseInformation={this.state.filteredExercises}
               activeButton={this.state.activeButton}
             />
           </Route>
-          <Route path="/information">
+          <Route path="/information/:exerciseId">
             <InformationScreen
-              exerciseInformation={this.state.filteredExercises}
+              exerciseList={this.state.filteredExercises}
             />
           </Route>
           <Route path="/exercise">

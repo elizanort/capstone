@@ -66,16 +66,16 @@ class App extends React.Component {
       title: "Refocus 2",
       information: "This is some information about the exercise",
       type: "refocus",
+      id: 6,
+    }
+  ]
 
 
 
   handleFilterClick = (type) => {
     this.setState(state => {
       return { activeButton: state.activeButton === type ? "" :  type }},()=> this.filterExercises()
-    )
-
-
-
+    );
   }
 
   filterExercises() {

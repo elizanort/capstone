@@ -138,7 +138,7 @@ class HomeScreen extends React.Component {
                 <li>
                   <Link to={`/information/${exercise.id}`} className="link">
                     <Card>
-                      <CardImgWrap>{exercise.image}</CardImgWrap>
+                      <CardImgWrap><img src={exercise.image} alt="the icon for the exercise"></img></CardImgWrap>
                       <CardTitle>{exercise.title}</CardTitle>
                     </Card>
                   </Link>

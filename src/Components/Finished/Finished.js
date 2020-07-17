@@ -8,7 +8,7 @@ class Finished extends Component {
 
     const Header = styled.p`
       font-family: "Raleway";
-      margin-top: 3rem;
+      margin-top: 2rem;
       font-size: 2rem;
       text-align: center;
       color: #006d77;

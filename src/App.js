@@ -22,16 +22,16 @@ class App extends React.Component {
   exerciseInformation = [
     {
       image: "./image/img.jpg",
-      title: "Energize 1",
-      information: "This is an exercise to help you",
+      title: "Wake Up, San Francisco",
+      information: "In this exercise we'll be lighting up those neurons and making you feel alive",
       type: "energize",
       id: 1,
     },
 
     {
       image: "./image/img.jpg",
-      title: "Energize 2",
-      information: "This is some information about the exercise",
+      title: "Sun Salutation",
+      information: "We will go through a series of exercises and create a flow of movement. Each pose coordinates with your breathing: Inhale to extend, and exhale to bend. ",
       type: "energize",
       id: 2,
     },
@@ -47,24 +47,24 @@ class App extends React.Component {
 
     {
       image: "./image/img.jpg",
-      title: "Relax 2",
-      information: "This is some information about the exercise",
+      title: "Lazy 8's",
+      information: "In this exercise we be going through will have our breath accompany our micromovements in our finger tips.",
       type: "relax",
       id: 4,
     },
 
     {
       image: "./image/img.jpg",
-      title: "Refocus 1",
-      information: "This is some information about the exercise",
+      title: "Check-In with Your Body",
+      information: "We will practice placing our awareness to the farthest points of our bodies -  bringing our body & mind alive.",
       type: "refocus",
       id: 5,
     },
 
     {
       image: "./image/img.jpg",
-      title: "Refocus 2",
-      information: "This is some information about the exercise",
+      title: "Shoulder Rolls",
+      information: "This is a simple exercise that will guide your upper body movement and breath to cohesion.",
       type: "refocus",
       id: 6,
     }

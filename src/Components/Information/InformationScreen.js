@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { withRouter } from "react-router-dom";
+// import Carousel from "../Carousel/Carousel.js";
 
 
 
@@ -93,7 +94,7 @@ class InformationScreen extends Component {
         <FlexColumnWrap>
           <InfoCard>
             <FlexColumnWrap>
-              <CardImgWrap><img src={this.state.exerciseMatch.img} alt='exercise graphic'/> </CardImgWrap>
+              <CardImgWrap><img src={this.state.exerciseMatch.image} alt='exercise graphic'/> </CardImgWrap>
               <CardHeader>{this.state.exerciseMatch.title}</CardHeader>
               <CardText>
                 {this.state.exerciseMatch.information}
@@ -102,6 +103,7 @@ class InformationScreen extends Component {
 
             </FlexColumnWrap>
           </InfoCard>
+          {/* <Carousel exerciseInformation={this.props.exerciseInformation}/> */}
         </FlexColumnWrap>
       </div>
     );

@@ -1,7 +1,7 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomeScreen from "./Components/Home/HomeScreen";
 import Exercise from "./Components/Exercise/Exercise.js";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import InformationScreen from "./Components/Information/InformationScreen";
 import Finished from "./Components/Finished/Finished";
 
@@ -31,7 +31,7 @@ class App extends React.Component {
 
   exerciseInformation = [
     {
-      image: {img1},
+      image: img1,
       title: "Wake Up, San Francisco",
       information: "In this exercise we'll be lighting up those neurons and making you feel alive",
       type: "energize",
@@ -39,7 +39,7 @@ class App extends React.Component {
     },
 
     {
-      image: {img2},
+      image: img2,
       title: "Sun Salutation",
       information: "We will go through a series of exercises and create a flow of movement. Each pose coordinates with your breathing: Inhale to extend, and exhale to bend. ",
       type: "energize",
@@ -47,7 +47,7 @@ class App extends React.Component {
     },
 
     {
-      image: {img3},
+      image: img3,
       title: "Breathing Exercise",
       information:
         "In this exercise, synchronize your breath with the moving circle to cultivate mindfulness and slow down.",
@@ -56,7 +56,7 @@ class App extends React.Component {
     },
 
     {
-      image: {img4},
+      image: img4,
       title: "Lazy 8's",
       information: "In this exercise we be going through will have our breath accompany our micromovements in our finger tips.",
       type: "relax",
@@ -64,7 +64,7 @@ class App extends React.Component {
     },
 
     {
-      image: {img5},
+      image: img5,
       title: "Check-In with Your Body",
       information: "We will practice placing our awareness to the farthest points of our bodies -  bringing our body & mind alive.",
       type: "refocus",
@@ -72,7 +72,7 @@ class App extends React.Component {
     },
 
     {
-      image: {img6},
+      image: img6,
       title: "Shoulder Rolls",
       information: "This is a simple exercise that will guide your upper body movement and breath to cohesion.",
       type: "refocus",
@@ -128,6 +128,6 @@ class App extends React.Component {
       </Router>
     );
   }
-}
+};
 
 export default App;

@@ -85,8 +85,7 @@ class HomeScreen extends React.Component {
       width: 90%;
       border-radius: 3rem;
 
-      // remove this background when image is added
-      background: rgba(0, 109, 119, 0.76);
+      
     `;
     const CardTitle = styled.h3`
       text-align: center;
@@ -138,7 +137,7 @@ class HomeScreen extends React.Component {
                 <li>
                   <Link to={`/information/${exercise.id}`} className="link">
                     <Card>
-                      <CardImgWrap><img src={exercise.image} alt="the icon for the exercise"></img></CardImgWrap>
+                      <CardImgWrap><img src={exercise.image} alt="the icon for the exercise" className="imgCard"></img></CardImgWrap>
                       <CardTitle>{exercise.title}</CardTitle>
                     </Card>
                   </Link>

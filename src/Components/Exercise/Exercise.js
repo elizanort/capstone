@@ -26,9 +26,11 @@ class Exercise extends Component {
     }
 
     startTimer = () => {
+      setTimeout(() => {
         this.setState({
-            myInterval : setInterval(this.countdown,1000)
-        });
+          myInterval : setInterval(this.countdown,1000)
+      })
+      }, 4000);
     }
 
     componentDidMount() {

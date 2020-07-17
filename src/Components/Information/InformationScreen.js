@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { withRouter } from "react-router-dom";
 
 
+
 class InformationScreen extends Component {
   constructor(props) {
     super(props);
@@ -46,6 +47,9 @@ class InformationScreen extends Component {
       border-radius: 3rem;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1), 4px 4px 4px rgba(0, 0, 0, 0.1);
       margin: 1rem;
+      &:active{
+        box-shadow: none;
+      }
     `;
 
     const CardImgWrap = styled.div`
@@ -89,7 +93,7 @@ class InformationScreen extends Component {
         <FlexColumnWrap>
           <InfoCard>
             <FlexColumnWrap>
-              <CardImgWrap><img src={this.state.exerciseMatch.image} alt='exercise graphic'/> </CardImgWrap>
+              <CardImgWrap><img src={this.state.exerciseMatch.img} alt='exercise graphic'/> </CardImgWrap>
               <CardHeader>{this.state.exerciseMatch.title}</CardHeader>
               <CardText>
                 {this.state.exerciseMatch.information}

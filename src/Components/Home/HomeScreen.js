@@ -48,7 +48,7 @@ class HomeScreen extends React.Component {
           props.active === props.name ?
           `
             background: #E29578;
-        ` : `background: black`}
+        ` : `background: linear-gradient(180deg, #EDF6F9 0%, #E6F2F5 76.04%, #8CBEC4 100%)`}
       
     `;
 
@@ -72,6 +72,10 @@ class HomeScreen extends React.Component {
       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2), 4px 4px 4px rgba(0, 0, 0, 0.1);
       border-radius: 3rem;
       margin: 1rem;
+
+      &:active{
+        box-shadow: none;
+      }
     `;
 
     const CardImgWrap = styled.div`
@@ -132,7 +136,7 @@ class HomeScreen extends React.Component {
             {this.props.exerciseInformation.map((exercise) => {
               return (
                 <li>
-                  <Link to={`/information/${exercise.id}`}>
+                  <Link to={`/information/${exercise.id}`} className="link">
                     <Card>
                       <CardImgWrap>{exercise.image}</CardImgWrap>
                       <CardTitle>{exercise.title}</CardTitle>

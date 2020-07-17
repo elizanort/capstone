@@ -46,6 +46,9 @@ class InformationScreen extends Component {
       border-radius: 3rem;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1), 4px 4px 4px rgba(0, 0, 0, 0.1);
       margin: 1rem;
+      &:active{
+        box-shadow: none;
+      }
     `;
 
     const CardImgWrap = styled.div`

@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import InformationScreen from "./Components/Information/InformationScreen";
 import Finished from "./Components/Finished/Finished";
 
+
 class App extends React.Component {
 
   constructor(props) {

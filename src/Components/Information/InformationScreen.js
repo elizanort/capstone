@@ -94,7 +94,7 @@ class InformationScreen extends Component {
         <FlexColumnWrap>
           <InfoCard>
             <FlexColumnWrap>
-              <CardImgWrap><img src={this.state.exerciseMatch.image} alt='exercise graphic'/> </CardImgWrap>
+              <CardImgWrap><img src={this.state.exerciseMatch.image} alt='exercise graphic' className="imgCard"/> </CardImgWrap>
               <CardHeader>{this.state.exerciseMatch.title}</CardHeader>
               <CardText>
                 {this.state.exerciseMatch.information}
